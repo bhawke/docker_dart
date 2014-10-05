@@ -60,8 +60,8 @@ void _startServer(ServerSocket socket, int isolate) {
   });
 
   var handler = const Pipeline().addMiddleware(isolateHeaderMiddleware)
-      .addHandler(createStaticHandler('bin/files',
-          defaultDocument: 'index.html'));
+      .addHandler(createStaticHandler('web',
+          defaultDocument: 'index.html', serveFilesOutsidePath: true));
 
   io.serveRequests(server, handler);
 }

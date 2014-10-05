@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treedog</title>
+    <script src="packages/web_components/platform.js"></script>
+    <script src="packages/web_components/dart_support.js"></script>
+    <link rel="import" href="packages/core_elements/core_scroll_header_panel.html">
+    <link rel="import" href="packages/core_elements/core_toolbar.html">
+    <link rel="stylesheet" href="app.css" shim-shadowdom>
+</head>
+<body unresolved fullbleed layout vertical>
+  <core-scroll-header-panel flex condenses keepCondensedHeader>
+    <core-toolbar class="tall">
+      <div flex></div>
+      <div class="bottom indent title">treedog</div>
+    </core-toolbar> 
+    <div class="content">
+      
+       <div style="height:2000px;">
+        Content
+        </div>
+    </div>
+  </core-scroll-header-panel>
+  <script type="application/dart">export 'package:polymer/init.dart';</script>
+    <script>
+  
+    // custom transformation: scale header's title
+    var titleStyle = document.querySelector('.title').style;
+    addEventListener('core-header-transform', function(e) {
+      var d = e.detail;
+      var m = d.height - d.condensedHeight;
+      var scale = Math.max(0.75, (m - d.y) / (m / 0.25)  + 0.75);
+      titleStyle.transform = titleStyle.webkitTransform = 
+          'scale(' + scale + ') translateZ(0)';
+    });
+  
+  </script>
+  
+</body>
+</html>
