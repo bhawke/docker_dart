@@ -1,0 +1,5 @@
+name: docker_dart
+description: A sample web application
+dependencies:
+  shelf: any
+  shelf_static: any
