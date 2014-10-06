@@ -4,11 +4,11 @@ packages:
   analyzer:
     description: analyzer
     source: hosted
-    version: "0.22.4"
+    version: "0.21.1"
   args:
     description: args
     source: hosted
-    version: "0.12.0+2"
+    version: "0.11.0+1"
   barback:
     description: barback
     source: hosted
@@ -24,7 +24,7 @@ packages:
   collection:
     description: collection
     source: hosted
-    version: "1.0.0"
+    version: "0.9.4"
   core_elements:
     description: core_elements
     source: hosted
@@ -41,10 +41,22 @@ packages:
     description: custom_element_apigen
     source: hosted
     version: "0.1.0"
+  di:
+    description: di
+    source: hosted
+    version: "2.0.2"
+  grinder:
+    description: grinder
+    source: hosted
+    version: "0.5.7"
   html5lib:
     description: html5lib
     source: hosted
     version: "0.12.0"
+  http:
+    description: http
+    source: hosted
+    version: "0.11.1+1"
   http_parser:
     description: http_parser
     source: hosted
@@ -85,6 +97,14 @@ packages:
     description: quiver
     source: hosted
     version: "0.18.2"
+  redstone:
+    description: redstone
+    source: hosted
+    version: "0.5.16"
+  route_hierarchical:
+    description: route_hierarchical
+    source: hosted
+    version: "0.4.22"
   shelf:
     description: shelf
     source: hosted
