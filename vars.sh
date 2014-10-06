@@ -1,2 +1,2 @@
-VM_NAME=my-dart-shelf-server
+VM_NAME=docker-dart
 ZONE=us-central1-a

@@ -2,6 +2,7 @@ name: docker_dart
 description: A sample web application
 dependencies:
   core_elements: any
+  mongo_dart: any
   paper_elements: any
   polymer: any
   redstone: any
