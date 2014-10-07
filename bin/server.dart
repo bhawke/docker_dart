@@ -8,6 +8,31 @@ import 'package:mongo_dart/mongo_dart.dart';
 class Posts {
   @app.Route("/list")
   list() => getAll().then((users) => users);
+  
+  @app.Route("/add")
+  void add() {
+    var dbHost = Platform.environment['MONGO_PORT_27017_TCP_ADDR'];
+    var dbPort = Platform.environment['MONGO_PORT_27017_TCP_PORT'];
+    var dbEnv = "mongodb://$dbHost:$dbPort/test";
+    var mongodb_uri = dbHost == null ? "mongodb://localhost/test" : dbEnv;
+    Db db = new Db(mongodb_uri);
+    DbCollection test;
+    db.open().then((_){
+      test = db.collection('users');
+      var data = [];
+      for(num i = 0; i<10; i++){
+        data.add({'name': 'User$i'});
+      }
+      test.drop().then((_) {
+        return Future.forEach(data,
+        (elem){
+          return test.insert(elem, writeConcern: WriteConcern.ACKNOWLEDGED);
+        });
+      }).then((_){
+        db.close();
+      });
+     });
+  }
 }
 
 Future<List> getAll() {
